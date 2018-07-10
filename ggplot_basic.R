@@ -19,3 +19,23 @@ qplot(Sepal.Length, Petal.Length, data = iris, color = Species, size = Petal.Wid
 qplot(Sepal.Length, Petal.Length, data = iris, color = Species,
       xlab = "Sepal Length", ylab = "Petal Length",
       main = "Sepal vs. Petal Length in Fisher's Iris data")
+
+#geom 
+qplot(Sepal.Length, Petal.Length, data = iris, geom = "point")
+qplot(Sepal.Length, Petal.Length, data = iris)
+
+# bar chart 
+movie = data.frame(director = c("spielberg", "spielberg", "spielberg", "jackson", "jackson"),
+                   movie = c("jaws", "avatar", "schindler's list", "lotr", "king kong"),
+                   minutes = c(124, 163, 195, 600, 187)
+)
+
+movie
+
+qplot(director, data = movie, geom = "bar", ylab = "# movies")
+qplot(director, weight = minutes, data = movie, geom = "bar", ylab = "total length (min.)")
+
+# geom = "line"
+qplot(Sepal.Length, Petal.Length, data = iris, geom = "line", color = Species)
+
+qplot(age, circumstance, data = Orange, geom = "line", colour = Tree, main = "How does orange tree circumstance vary with age?")
